@@ -12,19 +12,20 @@ void add(Leaderboard* leaderboard, int value) {
         return;
     }
 
+    int index = leaderboard->count - 1;
     for (int i = 1; i < leaderboard->count; i++) {
 
         if (value <= leaderboard->values[i]) {
-            leaderboard->values[i - 1] = value;
-            return;
+            index = i - 1;
+            break;
         }
     }
 
-    for (int i = 0; i < leaderboard->count - 1; i++) {
+    for (int i = 0; i < index; i++) {
         leaderboard->values[i] = leaderboard->values[i + 1];
     }
 
-    leaderboard->values[leaderboard->count - 1] = value;
+    leaderboard->values[index] = value;
 }
 
 int sum(Leaderboard* leaderboard) {
