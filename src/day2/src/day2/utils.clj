@@ -7,4 +7,3 @@
   (->> (slurp file-path)
        (string/split-lines)
        (map #(string/split % #" "))))
-
