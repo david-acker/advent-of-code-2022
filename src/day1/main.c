@@ -4,6 +4,8 @@
 #include "solution.h"
 #include "utils.h"
 
+#define TAB "    "
+
 int main(int argc, char** argv) {
     char* fileName = argv[1];
     FILE* fp = fopen(fileName, "r");
@@ -19,12 +21,12 @@ int main(int argc, char** argv) {
 
     // Part One
     int partOneResult = getHighestCalories(input->data, input->length);
-    printf("Part One: %d\n", partOneResult);
+    printf("%sPart One: %d\n", TAB, partOneResult);
 
     // Part Two
     int count = 3;
     int partTwoResult = getHighestCombinedCalories(input->data, input->length, count);
-    printf("Part Two: %d\n", partTwoResult);
+    printf("%sPart Two: %d\n", TAB, partTwoResult);
 
     free(input->data);
     free(input);

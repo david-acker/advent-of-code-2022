@@ -1,13 +1,14 @@
 #! /bin/bash
 
-make
+echo "Day 1: Calorie Counting"
+echo
+
+make 1> /dev/null
 
 if [ $? -ne 0 ]; then
     echo "An error occurred during compilation."
     exit 1
 fi
-
-echo
 
 basePath="../../input/day1/"
 testInputFilePath="${basePath}input_test.txt"
