@@ -2,3 +2,4 @@
 
 #### Languages
 - Day 1: C
+- Day 2: Clojure
