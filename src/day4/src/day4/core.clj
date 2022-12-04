@@ -6,11 +6,13 @@
 
 (defn -calculate-part-one [input-data]
   (->> input-data
-       (solution/get-super-set-ranges)
+       (solution/get-superset-count)
        (println "    Part one: ")))
 
-(defn -calculate-part-two [_] 
-  (println "    Part two: " "Not implemented"))
+(defn -calculate-part-two [input-data] 
+  (->> input-data
+       (solution/get-overlap-count)
+       (println "    Part two: ")))
 
 (defn -main [& args]
   (let [file-name   (first args)
