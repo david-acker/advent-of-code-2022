@@ -3,7 +3,7 @@
             [day2.solution :as solution]))
 
 (deftest get-score-part-two-test 
-  (testing "Fail: get-score-part-two, unexpected score"
+  (testing "scores for part two"
     (is (= 3 (solution/get-score-part-two "A" "X")))
     (is (= 4 (solution/get-score-part-two "A" "Y")))
     (is (= 8 (solution/get-score-part-two "A" "Z")))
