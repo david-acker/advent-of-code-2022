@@ -10,7 +10,6 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-
 basePath="../../input/day3/"
 testInputFilePath="${basePath}input_test.txt"
 
