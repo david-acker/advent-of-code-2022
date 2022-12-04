@@ -16,5 +16,6 @@ typedef struct Input {
 Input;
 
 Input* get_input(FILE* fp);
+void free_input(Input* input);
 
 #endif

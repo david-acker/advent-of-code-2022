@@ -53,3 +53,12 @@ Input* get_input(FILE* fp) {
 
     return input;
 }
+
+void free_input(Input* input) {
+    for (int i = 0; i < input->length; i++) {
+        free(input->rows[i]->data);
+        free(input->rows[i]);
+    }
+    free(input->rows);
+    free(input);
+}
