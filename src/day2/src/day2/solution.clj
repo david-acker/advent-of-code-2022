@@ -71,7 +71,7 @@
     :loss (-get-losing-strategy opponents-pick)
     ))
 
-(defn -get-score-part-two [opponents-pick second-col]
+(defn get-score-part-two [opponents-pick second-col]
   (let [outcome        (-get-required-outcome second-col)
         outcome-score  (-get-outcome-score outcome)
         required-shape (-get-required-shape opponents-pick outcome)
@@ -80,5 +80,5 @@
 
 (defn get-total-score-part-two [input-data]
   (->> input-data
-       (map (fn [[opponents-pick second-col]] (-get-score-part-two opponents-pick second-col)))
+       (map (fn [[opponents-pick second-col]] (get-score-part-two opponents-pick second-col)))
        (reduce +)))
