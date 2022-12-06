@@ -22,7 +22,9 @@ typedef struct Input {
 Input* get_input(FILE* fp);
 void free_input(Input* input);
 
-void print_stack(int stack_number, Stack* stack);
-void print_instruction(int instruction_number, Instruction* instruction);
+void print_stacks(Input* input);
+void print_instructions(Input* input);
+
+void print_top_crates(Input* input);
 
 #endif

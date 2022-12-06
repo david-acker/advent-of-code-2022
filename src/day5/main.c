@@ -5,40 +5,52 @@
 #include "stack.h"
 #include "utils.h"
 
-#define DEBUG 0
+#define DEBUG_STACKS_BEFORE 0
+#define DEBUG_STACKS_AFTER 0
+#define DEBUG_INSTRUCTIONS 0
 
 #define TAB "    "
 
 void get_part_one_result(FILE* fp) {
     Input* input = get_input(fp);
 
-    #if DEBUG
-    printf("Stacks:\n");
-    for (int i = 0; i < input->crate_stack_count; i++) {
-        print_stack(i, input->crate_stacks[i]);
-    }
+    #if DEBUG_STACKS_BEFORE
+    print_stacks(input);
+    #endif 
 
-    printf("Instructions:\n");
-    for (int i = 0; i < input->instruction_count; i++) {
-        print_instruction(i, input->instructions[i]);
-    }
+    #if DEBUG_INSTRUCTIONS
+    print_instructions(input);
     #endif
 
     apply_instructions(input);
 
+    #if DEBUG_STACKS_AFTER
+    print_stacks(input);
+    #endif 
+
     printf("%sPart one: ", TAB);
-    for (int i = 0; i < input->crate_stack_count; i++) {
-        printf("%c ", peek(input->crate_stacks[i]));
-    }
-    printf("\n");
+    print_top_crates(input);
 
     free_input(input);
 }
 
 void get_part_two_result(FILE* fp) {
-    printf("%sPart one: ", TAB);
-    printf("Not yet implemented.");
-    printf("\n");
+    Input* input = get_input(fp);
+
+    #if DEBUG_STACKS_BEFORE
+    print_stacks(input);
+    #endif 
+
+    apply_instructions_at_once(input);
+
+    #if DEBUG_STACKS_AFTER
+    print_stacks(input);
+    #endif
+
+    printf("%sPart two: ", TAB);
+    print_top_crates(input);
+
+    free_input(input);
 }
 
 int main(int argc, char** argv) {

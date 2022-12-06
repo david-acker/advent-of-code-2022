@@ -152,14 +152,33 @@ void free_input(Input* input) {
     free(input);
 }
 
-void print_stack(int stack_number, Stack* stack) {
-    printf("%d | ", stack_number);
-    for (int i = 0; i < stack->size; i++) {
-        printf("%c ", stack->items[i]);
+void print_stacks(Input* input) {
+    
+    printf("Stacks:\n");
+
+    for (int i = 0; i < input->crate_stack_count; i++) {
+        Stack* stack = input->crate_stacks[i];
+        printf("%d | ", i + 1);
+        for (int j = 0; j < stack->size; j++) {
+            printf("%c ", stack->items[j]);
+        }
+        printf("\n");
     }
-    printf("\n");
 }
 
-void print_instruction(int instruction_number, Instruction* instruction) {
-    printf("%d | %d %d %d\n", instruction_number, instruction->crate_count, instruction->start, instruction->end);
+void print_instructions(Input* input) {
+    
+    printf("Instructions:\n");
+
+    for (int i = 0; i < input->instruction_count; i++) {
+        Instruction* instruction = input->instructions[i];
+        printf("%d | %d %d %d\n", i + 1, instruction->crate_count, instruction->start, instruction->end);
+    }
+}
+
+void print_top_crates(Input* input) {
+    for (int i = 0; i < input->crate_stack_count; i++) {
+        printf("%c ", peek(input->crate_stacks[i]));
+    }
+    printf("\n");
 }
