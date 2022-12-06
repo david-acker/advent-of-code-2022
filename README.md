@@ -5,4 +5,4 @@
 - [Day 2: Clojure](/src/day2)
 - [Day 3: C](/src/day3)
 - [Day 4: Clojure](/src/day4)
-- [Day 5: Supply Stacks](/src/day5)
+- [Day 5: C](/src/day5)
