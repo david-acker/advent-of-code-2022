@@ -1,5 +1,5 @@
 $BaseSolutionPath = "src/day"
-$ScriptName = "run.sh"
+$ScriptBaseName = "run"
 
 $Separator = "=" * 35
 
@@ -26,14 +26,26 @@ function Run-Solution-For-Day() {
 
    $SolutionDirectory = "${BaseSolutionPath}${DayNumber}"
 
-   if ((Test-Path -Path $SolutionDirectory) -and (Test-Path -Path "${SolutionDirectory}/${ScriptName}")) {
-    Set-Location $SolutionDirectory
+   if (Test-Path -Path $SolutionDirectory) {
 
-    Run-Solution-With-Timing -SolutionScript { & "./${ScriptName}" }
+        $Script = $Null
 
-    Set-Location - | Out-Null
+        if (Test-Path -Path "${SolutionDirectory}/${ScriptBaseName}.ps1") {
+            $Script = "./${ScriptBaseName}.ps1"
+        }
+        elseif (Test-Path -Path "${SolutionDirectory}/${ScriptBaseName}.sh") {
+            $Script = "./${ScriptBaseName}.sh"
+        }
 
-    Write-Output $Separator
+        if ($Script -ne $Null) {
+            Set-Location $SolutionDirectory
+
+            Run-Solution-With-Timing -SolutionScript { & $Script }
+
+            Set-Location - | Out-Null
+
+            Write-Output $Separator
+        }
    }
 }
 
