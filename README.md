@@ -9,3 +9,4 @@
 - [Day 6: C](/src/day6)
 - [Day 7: C#](/src/day7)
 - [Day 8: C#](/src/day8)
+- [Day 9: C#](/src/day9)
