@@ -1,7 +1,7 @@
-﻿//#define TEST
+﻿#define TESTING
+#undef TESTING
 
 using Day7.Solution;
-using Day7.Solution.Extensions;
 
 var filePath = Environment.GetCommandLineArgs()[1];
 
@@ -15,7 +15,7 @@ var data = File.ReadLines(filePath);
 
 var directory = Solution.Parse(data);
 
-#if TEST
+#if TESTING
 directory.Display(showSize: true);
 #endif
 

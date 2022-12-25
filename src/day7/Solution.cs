@@ -1,8 +1,7 @@
-//#define TEST
+#define TESTING
+#undef TESTING
 
-using Day7.Solution.Commands;
-using Day7.Solution.Extensions;
-using Day7.Solution.Outputs;
+using Day7.Solution.Terminal;
 
 namespace Day7.Solution;
 
@@ -28,7 +27,7 @@ public class Solution
                 Console.WriteLine($"Line Number: {index}");
                 Console.WriteLine($"Line Data:   {line}");
 
-                #if TEST
+                #if TESTING
                 Console.WriteLine(new string('=', 50));
                 rootDirectory.Display();
                 Console.WriteLine(new string('=', 50));
@@ -91,7 +90,7 @@ public class Solution
         return CrawlDirectoryTree(directory);
     }
 
-    private static Line ParseLine(string[] lineComponents)
+    private static ITerminalLine ParseLine(string[] lineComponents)
     {
         return lineComponents switch
         {

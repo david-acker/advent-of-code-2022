@@ -21,4 +21,5 @@ Write-Output "Day 7: No Space Left On Device"
 Write-Output ""
 
 Run-Solution -InputFileName "input_test.txt" -InputName "test input"
+Write-Output ""
 Run-Solution -InputFileName "input.txt" -InputName "input"

@@ -21,4 +21,5 @@ Write-Output "Day 8: Treetop Tree House"
 Write-Output ""
 
 Run-Solution -InputFileName "input_test.txt" -InputName "test input"
+Write-Output ""
 Run-Solution -InputFileName "input.txt" -InputName "input"
